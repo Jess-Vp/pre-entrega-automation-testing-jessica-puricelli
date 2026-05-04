@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def test_inventory_validation():
     driver = webdriver.Chrome()
+    wait = WebDriverWait(driver, 10)
 
     try:
         login(driver)
@@ -56,8 +57,6 @@ def test_inventory_validation():
             "El filtro Name (Z to A) no ordena correctamente los productos"
         
 
-        wait = WebDriverWait(driver, 10)
-
         # Validar menu hamburguesa
         menu_button = wait.until(
             EC.element_to_be_clickable((By.ID, "react-burger-menu-btn"))
@@ -79,10 +78,16 @@ def test_inventory_validation():
         menu_options = wait.until(
             EC.visibility_of_all_elements_located((By.CLASS_NAME, "bm-item"))
         )
-        menu_options_text = [option.text.strip() for option in menu_options if option.text != ""]
+        menu_options_text = [
+            option.text.strip() 
+            for option in menu_options 
+            if option.text != ""
+        ]
    
         print("Opciones esperadas:", expected_menu_options)
         print("Opciones capturadas:", menu_options_text) 
+
+        assert menu_options_text == expected_menu_options, "Las opciones del menú hamburguesa no son correctas"
 
 
         # Cerrar el menú
