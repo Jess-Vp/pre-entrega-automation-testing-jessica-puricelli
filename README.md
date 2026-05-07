@@ -31,16 +31,22 @@ https://www.saucedemo.com
 
 ```text
 project/
+├── reports/
+│   └── report.html
 │
 ├── tests/
 │   ├── test_inventory.py
 │   └── test_login.py
+│   └── test_products.py
 │
 ├── utils/
 │   └── LoginPage.py
 │
 ├── venv/
-└── README.md
+├── conftest.py
+├── pytest.ini
+├── README.md
+└── requirements.txt
 ```
 
 ---
