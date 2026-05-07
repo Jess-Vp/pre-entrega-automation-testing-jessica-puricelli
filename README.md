@@ -105,7 +105,6 @@ pytest tests/NOMBRE DEL FILE A EJECUTAR
     Usuario: standard_user
     Contraseña: secret_sauce
 - Validación de login exitoso verificando redirección a /inventory.html
-- Validación del título "Products"
 - Validación del logo "Swag Labs"
 
 
@@ -131,4 +130,15 @@ pytest tests/NOMBRE DEL FILE A EJECUTAR
 - Validación de elementos de la interfaz:
   - Se verifica que el botón del menú hamburguesa esté visible
   - Se verifica que el filtro del catálogo esté visible
+
+
+### Product Interaction Automation (Cart)
+- Add product to cart
+- Click on the "Add to cart" button for the first available product in the inventory.
+- Cart counter validation
+- Verify that the cart counter increments correctly after adding a product (expected value: 1).
+- Navigate to cart
+- Access the cart page by clicking on the cart icon in the header.
+- Product validation in cart
+- Ensure that the added product is correctly displayed in the cart by validating that the product name matches the one previously selected. 
 
